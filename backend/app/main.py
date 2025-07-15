@@ -35,3 +35,8 @@ else:
 @app.get("/api")
 def read_root():
     return {"message" : "FASTAPI 서버가 실행 중입니다."}
+
+@app.get("/ping")
+def ping():
+    print("Ping called from Android App!")
+    return {"message": "pong"}
