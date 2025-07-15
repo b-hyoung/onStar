@@ -25,7 +25,7 @@ class PingViewModel : ViewModel() {
                 if (response.isSuccessful) {
                     _pingMessage.value = response.body()?.message ?: "응답 없음"
                 } else {
-                    _pingMessage.value = "Error code: ${response.code()}"
+                    _pingMessage.value = "Error codedd: ${response.code()}"
                 }
             } catch (e: IOException) {
                 _pingMessage.value = "network Error: ${e.message}"
