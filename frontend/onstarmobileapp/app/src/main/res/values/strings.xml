@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">onstar-mobile-app</string>
+    <string name="app_name"></string>
+    <string name="hint_id">아이디</string>
+    <string name="hint_password">패스워드</string>
+    <string name="hint_email">example@example.com</string>
+    <string name="passwordhint">비밀번호</string>
+
 </resources>
