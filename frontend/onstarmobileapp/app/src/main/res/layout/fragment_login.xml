@@ -43,7 +43,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"
-            android:hint="@string/passwordhint"
+            android:hint="@string/hint_password"
             android:padding="15dp"
             android:textSize="15sp" />
 

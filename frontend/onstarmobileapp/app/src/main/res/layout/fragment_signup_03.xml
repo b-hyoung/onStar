@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="543dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <TextView
+            android:id="@+id/checkedEmailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:text="이메일을 확인해주세요."
+            android:textAlignment="center"
+            android:textColor="#ff3333"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="30dp"
+            />
+
+        <TextView
+            android:id="@+id/CheckedEmailId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="example@eaxple.com\n해당이메일로 인증번호를 전송했습니다."
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="50dp"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+
+            >
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:hint="-"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/edit_text_background"
+                />
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:hint="-"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/edit_text_background"
+                />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:hint="-"
+                android:background="@drawable/edit_text_background"
+                />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:hint="-"
+                android:background="@drawable/edit_text_background"
+                />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:hint="-"
+                android:background="@drawable/edit_text_background"
+                />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"
+        >
+        >
+        <TextView
+            android:id="@+id/resendEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"
+            android:text="이메일이 도착하지 않으셨나요?"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/resentemail_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"
+            android:text="Resend Email"
+            android:textAlignment="center"
+            android:textColor="#0EB7E5"
+            android:textSize="15sp"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="30dp"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:text="남은 시간 03:00"
+        />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button3"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="#FFA2A2"
+            android:text="다양한 여행지 구경하러 가기"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="50dp"
+            />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

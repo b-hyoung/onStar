@@ -13,6 +13,6 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // fragment_login.xml을 inflate해서 반환
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        return inflater.inflate(R.layout.fragment_signup_03, container, false)
     }
 }
