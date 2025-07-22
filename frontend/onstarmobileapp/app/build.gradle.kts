@@ -55,6 +55,8 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("androidx.compose.material3:material3:1.2.0")
     implementation("com.google.android.material:material:1.11.0")
+    implementation ("com.github.denzcoskun:imageslideshow:0.1.2")
+    implementation ("androidx.recyclerview:recyclerview:1.3.2")
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.runtime.android)
