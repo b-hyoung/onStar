@@ -16,7 +16,12 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url = uri("https://jitpack.io")}
+
+        // ✅ jitpack
+        maven { url = uri("https://jitpack.io") }
+
+        // ✅ naver map sdk 저장소
+        maven { url = uri("https://repository.map.naver.com/archive/maven") }
     }
 }
 

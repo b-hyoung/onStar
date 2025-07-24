@@ -13,6 +13,4 @@ class HorizontalSpaceItemDecoration(private val space: Int) : RecyclerView.ItemD
             outRect.right = space
         }
     }
-
-
 }

@@ -38,6 +38,7 @@ class HomeActivity : AppCompatActivity() {
               CardItem(R.drawable.dogam_seoul,"서울","12 / 24"),
               CardItem(R.drawable.dogam_busan,"부산","08 / 23"),
               CardItem(R.drawable.dogam_geunggido,"경기도","03 / 36"),
+              CardItem(R.drawable.dogam_jeonrado,"전라북도","23/108"),
           )
 
 
@@ -52,5 +53,25 @@ class HomeActivity : AppCompatActivity() {
         recyclerView.adapter = CardAdapter(items)
         //
 
+        //도감 테마
+        val recyclerViewTheme = findViewById<RecyclerView>(R.id.recyclerViewTheme)
+        recyclerViewTheme.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+
+        val items_theme = listOf(
+            CardItem(R.drawable.dogam_seoul,"비","12 / 24"),
+            CardItem(R.drawable.dogam_busan,"안개","08 / 23"),
+            CardItem(R.drawable.dogam_geunggido,"봄","03 / 36"),
+            CardItem(R.drawable.dogam_jeonrado,"연인","23/108"),
+        )
+
+
+        // 도감 간격
+        val spaceInPixels_theme = TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP, 15f,resources.displayMetrics
+        ).toInt()
+
+        recyclerViewTheme.addItemDecoration(HorizontalSpaceItemDecoration(spaceInPixels_theme))
+
+        recyclerViewTheme.adapter = CardAdapter(items_theme)
     }
 }

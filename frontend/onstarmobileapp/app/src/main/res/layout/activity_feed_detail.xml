@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@android:color/white"
+    android:layout_marginBottom="56dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="10dp"
+        >
+
+        <!-- 타이틀 -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="춘향루 달빛바다"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginBottom="6dp"/>
+
+        <!-- 태그 버튼 -->
+        <Button
+            android:id="@+id/tagButton"
+            android:layout_width="55dp"
+            android:layout_height="32dp"
+            android:text="춘향루"
+            android:textStyle="bold"
+            android:textSize="9sp"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#7394FF"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="10dp"
+            >
+            <!-- 프로필 아이콘 -->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_user_profile"
+                android:padding="2dp"
+                android:layout_marginEnd="6dp" />
+
+            <!-- 작성자 이름 + 날짜 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                >
+
+                <TextView
+                    android:id="@+id/authorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="박형석"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date 22.04.22"
+                    android:textSize="12sp"
+                    android:textColor="#999999" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 이미지 -->
+        <ImageView
+            android:id="@+id/setimageResource"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/feed_banner_namwon"
+            android:background="@drawable/rounded_background" />
+
+        <!-- 리뷰 -->
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="당신이 적은 리뷰가 여기에 나올거에요\n짧게 적어서 남겨주세요 ^^"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:layout_marginBottom="10dp"/>
+        <!-- 좋아요 & 조회수 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp"
+            >
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_heart"
+                android:layout_marginEnd="4dp"/>
+
+            <TextView
+                android:id="@+id/likeCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#E53935"
+                android:textSize="12sp"
+                android:layout_marginEnd="12dp"/>
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_people"
+                android:layout_marginEnd="4dp"/>
+
+            <TextView
+                android:id="@+id/viewCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#1976D2"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <!-- 위치 -->
+        <View
+            android:id="@+id/asdf"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="#808080"
+ />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <!-- 위치 텍스트들 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:text="위치"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="전라남도 남원시"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/subaddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="춘향동 오목로 131-2"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- 위치 이미지 네모 -->
+            <ImageView
+                android:id="@+id/mapPreview"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/rounded_background"
+                android:scaleType="centerCrop"
+                android:src="@drawable/banner_frame_geagok" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center_horizontal"
+            android:background="#808080"
+  />
+
+        <!-- 다른 글 보기 (추후 RecyclerView 연결) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="다른 글 보기"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- detail_activity.xml 하단에 이미지를 넣은 LinearLayout -->
+        <LinearLayout
+            android:id="@+id/otherPostContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"/>
+
+    </LinearLayout>
+</ScrollView>
+
+    <include
+        layout="@layout/foot_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" />
+</FrameLayout>
+

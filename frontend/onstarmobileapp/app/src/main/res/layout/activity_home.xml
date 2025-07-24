@@ -15,7 +15,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="50dp"
             android:orientation="horizontal">
 
@@ -38,6 +38,7 @@
                 tools:layout_gravity="center" />
         </LinearLayout>
 
+        <!-- 슬라이더 -->
         <androidx.cardview.widget.CardView
             android:layout_width="380dp"
             android:layout_height="180dp"
@@ -63,6 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:textColor="@color/black"
             android:text="내 도감"
             android:textSize="24dp"
             android:textStyle="bold"
@@ -77,9 +79,10 @@
             android:textSize="16dp"
             android:textStyle="bold" />
 
+        <!-- 내 도감 리스트 -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="219dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="15dp">
 
@@ -91,6 +94,49 @@
                 />
 
         </LinearLayout>
-    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="최근 다녀온 곳"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="10dp"
+        />
 
+    <!-- 최근 다녀온 곳 -->
+    <include
+        layout="@layout/fragment_home_newdatelist"
+        android:id="@+id/revierCard"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="여행 테마"
+        android:textSize="24sp"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <include
+        layout="@layout/foot_layout"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

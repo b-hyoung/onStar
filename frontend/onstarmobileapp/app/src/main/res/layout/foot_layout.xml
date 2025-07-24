@@ -10,50 +10,48 @@
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="652dp"
         android:layout_marginEnd="1dp"
         android:background="@drawable/rounded_background"
         android:orientation="horizontal"
         android:padding="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/icon_unsel_blank" />
+            app:srcCompat="@drawable/ic_unsel_blank" />
 
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/icon_unsel_feed" />
+            app:srcCompat="@drawable/ic_unsel_feed" />
 
         <ImageView
             android:id="@+id/imageView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/icon_unsel_home" />
+            app:srcCompat="@drawable/ic_sel_home" />
 
         <ImageView
             android:id="@+id/imageView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/icon_unsel_navigate" />
+            app:srcCompat="@drawable/ic_unsel_navigate" />
 
         <ImageView
             android:id="@+id/imageView10"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/icon_unsel_mypage" />
+            app:srcCompat="@drawable/ic_unsel_mypage" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

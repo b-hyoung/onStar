@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+    </style>
     <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
         <item name="android:background">@drawable/edit_text_background</item>
 
