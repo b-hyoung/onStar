@@ -1,89 +1,209 @@
-
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- 네이버 지도 View -->
+    <!-- 1. 네이버 지도 전체화면 -->
 
-    <!-- 상단 타이틀 -->
+    <!-- 2. 상단 중앙 타이틀 ("지도 + 아이콘") -->
 
     <com.naver.maps.map.MapView
         android:id="@+id/map_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@+id/mapTitle2"
+    <LinearLayout
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        android:paddingBottom="12dp"
+        android:background="@android:color/white"
+        android:elevation="4dp">
+
+        <TextView
+            android:text="지도"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/wh_logo"
+            android:layout_marginEnd="6dp" />
+
+    </LinearLayout>
+
+    <!-- 3. 지도 좌측 상단 - 지역 선택 Spinner -->
+    <LinearLayout
+        android:id="@+id/area_spinner_container"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_background_white"
+        android:padding="8dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:elevation="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="100dp">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/wh_logo"
+            android:layout_marginEnd="6dp" />
+
+        <Spinner
+            android:id="@+id/area_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:popupBackground="@drawable/round_background_white" />
+    </LinearLayout>
+
+
+
+    <!-- 4. 지도 우측 상단 - 내 위치 버튼 -->
+    <LinearLayout
+        android:id="@+id/my_location_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="지도"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_margin="16dp"
-        android:layout_gravity="top|center_horizontal" />
+        android:layout_alignTop="@id/area_spinner_container"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/round_background_white"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center_vertical"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/my_location_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_mylocation"
+            android:contentDescription="내 위치" />
+
+        <TextView
+            android:id="@+id/my_location_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내 위치"
+            android:padding="6dp"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginStart="6dp" />
+    </LinearLayout>
 
 
-<!--    &lt;!&ndash; 하단 카드 (고정) &ndash;&gt;-->
-<!--    <LinearLayout-->
-<!--        android:id="@+id/bottomCard"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="100dp"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:padding="12dp"-->
-<!--        android:layout_gravity="bottom"-->
-<!--        android:background="@drawable/rounded_background"-->
-<!--        android:elevation="10dp">-->
+    <LinearLayout
+        android:layout_width="380dp"
+        android:layout_height="160dp"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/round_background_white"
+        android:elevation="4dp">
 
-<!--        <ImageView-->
-<!--            android:layout_width="60dp"-->
-<!--            android:layout_height="60dp"-->
-<!--            android:src="@drawable/feed_banner_namwon"-->
-<!--            android:scaleType="centerCrop"-->
-<!--            android:layout_marginEnd="12dp"/>-->
+        <!-- 이미지 -->
+        <FrameLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@android:color/white">
 
-<!--&lt;!&ndash;        <LinearLayout&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_width="0dp"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_weight="1"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:orientation="vertical">&ndash;&gt;-->
+        <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/place_image"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/feed_banner_namwon"
+                app:shapeAppearanceOverlay="@style/RoundedImageStyle" />
+        </FrameLayout>
 
-<!--&lt;!&ndash;            <TextView&ndash;&gt;-->
-<!--&lt;!&ndash;                android:id="@+id/cardTitle"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:text="춘향루 달빛바다"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:textStyle="bold"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:textSize="14sp"/>&ndash;&gt;-->
+        <!-- 텍스트 + 버튼 묶음 -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="125dp"
+            android:layout_weight="1"
+            android:paddingStart="12dp">
 
-<!--&lt;!&ndash;            <TextView&ndash;&gt;-->
-<!--&lt;!&ndash;                android:id="@+id/cardAddress"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:text="전라남도 남원시 순향동 오목로 131-2"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:textSize="12sp"/>&ndash;&gt;-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-<!--&lt;!&ndash;            <LinearLayout&ndash;&gt;-->
-<!--&lt;!&ndash;                android:orientation="horizontal"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;                android:layout_height="wrap_content">&ndash;&gt;-->
-<!--&lt;!&ndash;                <TextView&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:text="♥21"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:textSize="12sp"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:textColor="#E53935"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:layout_marginEnd="8dp"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                <TextView&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:text="👁132"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:textSize="12sp"&ndash;&gt;-->
-<!--&lt;!&ndash;                    android:textColor="#1976D2"/>&ndash;&gt;-->
-<!--&lt;!&ndash;            </LinearLayout>&ndash;&gt;-->
-<!--&lt;!&ndash;        </LinearLayout>&ndash;&gt;-->
+                <TextView
+                    android:id="@+id/place_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="춘향루 달빛바다"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000" />
 
-<!--        <Button-->
-<!--            android:id="@+id/checkinButton"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="인 증 하 기"-->
-<!--            android:textSize="12sp"-->
-<!--            android:layout_gravity="bottom"/>-->
-<!--    </LinearLayout>-->
-</FrameLayout>
+                <TextView
+                    android:id="@+id/place_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="전라남도 남원시 춘향동 오동로 131-2"
+                    android:textSize="12sp"
+                    android:textColor="#999999"
+                    android:layout_marginTop="2dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="❤️ 21"
+                        android:textSize="12sp"
+                        android:textColor="#FF4444" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="   👤 132"
+                        android:textSize="12sp"
+                        android:textColor="#4477FF" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 버튼을 오른쪽 아래에 고정 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_certify"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="6dp"
+                android:letterSpacing="0.5"
+                android:text="인 증 하 기"
+                android:layout_marginTop="10dp"
+                app:cornerRadius="10dp"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#698BFB"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+    <include
+        layout="@layout/foot_layout"
+        />
+
+</RelativeLayout>

@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="passwordhint">비밀번호</string>
+    <string-array name="area_list">
+        <item>전라남도 남원시</item>
+        <item>서울특별시</item>
+        <item>부산광역시</item>
+    </string-array>
 </resources>

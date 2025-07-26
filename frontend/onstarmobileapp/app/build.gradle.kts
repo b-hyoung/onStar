@@ -62,6 +62,8 @@ dependencies {
     implementation ("androidx.recyclerview:recyclerview:1.3.1") // 버전은 최신으로
     implementation("com.google.android.material:material:1.11.0")
     implementation ("com.github.denzcoskun:imageslideshow:0.1.2")
+    implementation ("com.google.android.gms:play-services-location:21.3.0")
+    implementation ("com.google.android.material:material:1.12.0")
     implementation("com.naver.maps:map-sdk:3.22.0")
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
