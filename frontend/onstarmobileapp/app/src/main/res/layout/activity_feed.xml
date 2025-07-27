@@ -1,12 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-        <!-- 🔹 상단 헤더 -->
+    <!-- 콘텐츠 Wrapper (패딩 적용 영역) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contentWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/footer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- 상단 타이틀 -->
         <TextView
             android:id="@+id/title_feed"
             android:layout_width="wrap_content"
@@ -15,11 +25,11 @@
             android:text="피드"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-        <!-- 🔹 탭 메뉴 -->
+        <!-- 탭 메뉴 -->
         <LinearLayout
             android:id="@+id/tabMenu"
             android:layout_width="380dp"
@@ -37,8 +47,7 @@
                 android:layout_marginEnd="16dp"
                 android:text="관광지"
                 android:textColor="#000000"
-                android:textSize="24sp"
-                />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/tabFood"
@@ -58,16 +67,24 @@
                 android:textSize="24sp" />
         </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabMenu"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        <!-- 리사이클러뷰 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/tabMenu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 🔹 푸터 (패딩 영향 X) -->
     <include
+        android:id="@+id/footer"
         layout="@layout/foot_layout"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

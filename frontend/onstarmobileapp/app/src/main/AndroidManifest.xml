@@ -22,7 +22,7 @@
             android:name="com.naver.maps.map.NCP_KEY_ID"
             android:value="${NAVER_CLIENT_ID}" />
         <activity
-            android:name=".NavigateActivity"
+            android:name=".MainActivity"
             android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -31,6 +31,14 @@
         </intent-filter>
         </activity>
         <activity android:name=".FeedDetailActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".NavigateActivity" />
+        <activity android:name=".FeedActivity" />
+        <activity android:name=".MyPageActivity" />
+
+
+
+
     </application>
 
 </manifest>

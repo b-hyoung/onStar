@@ -4,6 +4,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.bobCompany.onstarMobileApp.util.setupFootbarClicks
 
 class MainActivity : AppCompatActivity() {
     private val viewModel: PingViewModel by viewModels()
@@ -15,6 +16,8 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
 
         setContentView(R.layout.activity_login)
+
+
 
         // 앱 시작 시 로그인 Fragment 삽입
         supportFragmentManager.beginTransaction()

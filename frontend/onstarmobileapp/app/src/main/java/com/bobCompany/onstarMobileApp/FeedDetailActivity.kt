@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.bobCompany.onstarMobileApp.databinding.ActivityFeedDetailBinding
+import com.bobCompany.onstarMobileApp.util.setupFootbarClicks
 import com.bobCompany.onstarMobileApp.viewModel.FeedViewModel
 
 class FeedDetailActivity :AppCompatActivity() {
@@ -20,6 +21,7 @@ class FeedDetailActivity :AppCompatActivity() {
         supportActionBar?.hide()
         binding = ActivityFeedDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setupFootbarClicks(this,R.id.imageView6)
 
         val feedId = intent.getIntExtra("feed_id",-1)
 

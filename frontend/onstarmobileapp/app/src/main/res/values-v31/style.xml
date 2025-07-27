@@ -6,9 +6,18 @@
         <item name="android:background">@drawable/edit_text_background</item>
 
     </style>
+
+    <!-- 이미지 라운드 주기 -->
     <style name="RoundedImageStyle" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">10%</item>
+    </style>
+
+    <!-- 지도 모달 다이얼로그 -->
+    <style name="ModalDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.6</item> <!-- 어두운 정도 -->
+        <item name="android:windowMinWidthMajor">90%</item>
     </style>
 
 </resources>

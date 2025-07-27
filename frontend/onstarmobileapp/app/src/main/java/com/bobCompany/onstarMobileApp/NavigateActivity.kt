@@ -1,11 +1,16 @@
 package com.bobCompany.onstarMobileApp
 
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
+import com.bobCompany.onstarMobileApp.util.setupFootbarClicks
 import com.naver.maps.geometry.LatLng
 import com.naver.maps.map.CameraUpdate
 import com.naver.maps.map.util.FusedLocationSource
@@ -29,6 +34,7 @@ class NavigateActivity : AppCompatActivity() , OnMapReadyCallback  {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         setContentView(R.layout.activity_navigate)
+        setupFootbarClicks(this,R.id.imageView9)
 
         //드롭다운 스피너 연결
         val spinner = findViewById<Spinner>(R.id.area_spinner)
@@ -50,6 +56,28 @@ class NavigateActivity : AppCompatActivity() , OnMapReadyCallback  {
         spinner.dropDownVerticalOffset = 120
         spinner.dropDownHorizontalOffset = 0
 
+
+        //인증모달 띄우기
+        val certifyBtn = findViewById<Button>(R.id.btn_certify)
+        certifyBtn.setOnClickListener{
+            //다이얼로그 생성
+            val dialog = Dialog(this)
+            dialog.setContentView(R.layout.location_cert_modal)
+
+            //배경 투명하게
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+            //다이얼로그 닫기 버튼이 있다면 예시
+            //val closeButton = dialog findViewById<Button>(R.id.btn_close)
+            //closeButton?.setOnClickListener{
+            //    dialog.dismiss()
+            //}
+            dialog.show()
+        }
+
+
+
+        // 네이버 지도 관련
         mapView = findViewById<MapView>(R.id.map_view)
         mapView.onCreate(savedInstanceState)
 

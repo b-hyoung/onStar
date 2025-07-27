@@ -11,6 +11,7 @@ import com.denzcoskun.imageslider.models.SlideModel
 import com.bobCompany.onstarMobileApp.adapter.CardAdapter
 import com.bobCompany.onstarMobileApp.data.CardItem
 import com.bobCompany.onstarMobileApp.decoration.HorizontalSpaceItemDecoration
+import com.bobCompany.onstarMobileApp.util.setupFootbarClicks
 
 
 class HomeActivity : AppCompatActivity() {
@@ -18,6 +19,8 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         setContentView(R.layout.activity_home)
+        setupFootbarClicks(this,R.id.imageView7)
+
 
         //이미지 슬라이더
         val imageList = ArrayList<SlideModel>()

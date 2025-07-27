@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bobCompany.onstarMobileApp.adapter.FeedAdapter
 import com.bobCompany.onstarMobileApp.databinding.ActivityFeedBinding
+import com.bobCompany.onstarMobileApp.util.setupFootbarClicks
 import com.bobCompany.onstarMobileApp.viewModel.FeedViewModel
 
 class FeedActivity : AppCompatActivity(){
@@ -22,6 +23,7 @@ class FeedActivity : AppCompatActivity(){
         supportActionBar?.hide()
         binding = ActivityFeedBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setupFootbarClicks(this,R.id.imageView6)
 
         //기본은 관광지 탭
         adapter = FeedAdapter(viewModel.tourList)
