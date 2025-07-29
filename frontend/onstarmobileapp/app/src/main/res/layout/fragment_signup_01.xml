@@ -23,7 +23,7 @@
             />
 
         <EditText
-            android:id="@+id/inputidfield"
+            android:id="@+id/idfield"
             style="@style/EditTextStyle"
             android:layout_width="300dp"
             android:layout_height="50dp"
@@ -32,6 +32,12 @@
             android:hint="@string/hint_id"
             android:padding="15dp"
             android:textSize="15sp" />
+        <TextView
+            android:id="@+id/error_Id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ErrorTextStyle"
+            android:visibility="gone" />
 
         <EditText
             android:id="@+id/passwordfield"
@@ -40,13 +46,23 @@
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"
+            android:inputType="textPassword"
             android:hint="@string/passwordhint"
             android:padding="15dp"
             android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/error_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            style="@style/ErrorTextStyle"
+            />
         <EditText
             android:id="@+id/repasswordfield"
             style="@style/EditTextStyle"
             android:layout_width="300dp"
+            android:inputType="textPassword"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"
@@ -54,14 +70,23 @@
             android:padding="15dp"
             android:textSize="15sp"
             />
+        <TextView
+            android:id="@+id/error_pw_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            style="@style/ErrorTextStyle"
+            />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button3"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/next_btn"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:backgroundTint="#FFA2A2"
+            android:visibility="gone"
             android:text="다음으로"
+            app:cornerRadius="10dp"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"

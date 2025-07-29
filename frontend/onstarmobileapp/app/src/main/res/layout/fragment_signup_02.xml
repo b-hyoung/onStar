@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="543dp"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
+            android:inputType="textEmailAddress"
             android:text="이메일을 입력해주세요."
             android:textAlignment="center"
             android:textColor="@color/black"
@@ -26,9 +27,15 @@
             android:textStyle="bold"
             android:layout_marginBottom="50dp"
             />
+        <TextView
+            android:id="@+id/errorEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ErrorTextStyle"
+            />
 
         <EditText
-            android:id="@+id/inputidfield"
+            android:id="@+id/emailInputFiled"
             style="@style/EditTextStyle"
             android:layout_width="300dp"
             android:layout_height="50dp"
@@ -38,17 +45,20 @@
             android:padding="15dp"
             android:textSize="15sp" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button3"
+        <com.google.android.material.button.MaterialButton
+
+            android:id="@+id/btn_next"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:backgroundTint="#FFA2A2"
             android:text="다음으로"
+            android:layout_marginRight="25dp"
+            android:visibility="gone"
+            app:cornerRadius="10dp"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:layout_marginRight="55dp"
             android:layout_marginTop="15dp"
             />
     </LinearLayout>

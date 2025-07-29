@@ -39,6 +39,7 @@
         <EditText
             android:id="@+id/passwordfield"
             style="@style/EditTextStyle"
+            android:inputType="textPassword"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
@@ -61,7 +62,8 @@
             android:textStyle="bold" />
 
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
+
             android:id="@+id/loginBtn"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -69,6 +71,7 @@
             android:backgroundTint="#FFA2A2"
             android:text="로그인"
             android:textColor="@color/white"
+            app:cornerRadius="10dp"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -134,6 +137,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="0dp"
                 android:text="가입하기"
+                android:clickable="true"
+                android:focusable="true"
                 android:textColor="#4B86EB"
                 android:textSize="15sp" />
         </LinearLayout>

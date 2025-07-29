@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 
 class LoginFragment : Fragment() {
@@ -24,10 +25,19 @@ class LoginFragment : Fragment() {
 
         //버튼 찾기
         val loginButton = view.findViewById<Button>(R.id.loginBtn)
+        val signButton = view.findViewById<TextView>(R.id.signup)
 
         loginButton.setOnClickListener{
             val intent = Intent(requireContext(),HomeActivity::class.java)
             startActivity(intent)
         }
+        signButton.setOnClickListener{
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.frameLayout8,SignUpFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
+
     }
 }
