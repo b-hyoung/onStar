@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: fastapi_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    # env로 숨겨진 파일에 정보 가져와서 사용(db 아이디 비밀번호)
+    # 변수화를 하며 변경해도 바로적용 할 수 있게 env 사용
+    env_file:
+      - .env
+    # 서버 시작전 DB서비스 로그인
+    depends_on:
+      - db
+    # fast api 서버 실행 호스트는 모두입장가능(0.0.0.0) 포트번호 8000번  
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  # 버전
+  db:
+    image: postgres:15
+    # 컨테이너 이름 (자유)
+    container_name: postgres_db
+    # 컨테이너가 종료해도 재실행 되도록 설정(?) 잘모르겟음
+    restart: always
+    # 사용자 , 비밀번호 , db이름 설정
+    # 해당정보는 민감한 정보이기때문에 .env에 저장해뒀음.
+    env_file:
+      - .env
+    # postSQL 기본포트(5432)로 설정
+    ports:
+      - "5432:5432"
+    # postSQL 데이터 저장폴더를 docker volume에 연결하여 컨테이너가 꺼져도 Db손실을 일으키지않음
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+#볼륨 이름 정의 DB데이터 영구저장 용도
+volumes:
+  postgres_data:
