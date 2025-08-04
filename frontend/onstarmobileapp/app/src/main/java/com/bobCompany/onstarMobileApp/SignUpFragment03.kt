@@ -8,7 +8,6 @@ import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.bobCompany.onstarMobileApp.databinding.FragmentSignup03Binding  // ✅ 수정된 바인딩 클래스
 
@@ -23,10 +22,6 @@ class SignUpFragment03 : Fragment() {
         return binding.root
     }
 
-    override fun onDestroyView() {
-        _binding = null
-        super.onDestroyView()
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -41,6 +36,10 @@ class SignUpFragment03 : Fragment() {
         }
     }
 
+    override fun onDestroyView() {
+        _binding = null
+        super.onDestroyView()
+    }
 
 
     //한글자 포커스 이동
