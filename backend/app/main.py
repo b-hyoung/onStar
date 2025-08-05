@@ -7,7 +7,7 @@ from fastapi.staticfiles import StaticFiles
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-ROOT_DIR = os.path.dirname(os.path.dirname(BASE_DIR))  # kiosk/
+ROOT_DIR = os.path.dirname(os.path.dirname(BASE_DIR))  
 FRONTEND_DIR = os.path.join(BASE_DIR, "../frontend")
 
 
